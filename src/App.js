@@ -1,6 +1,7 @@
 import './App.css';
 import Weather from './Components/Weather';
 import Header from './Components/Header';
+import Forecast from './Components/Forecast';
 
 function App() {
 	return (
@@ -9,6 +10,7 @@ function App() {
 			<Header />
 
 			<Weather />
+			<Forecast />
 		</div>
 	);
 }
