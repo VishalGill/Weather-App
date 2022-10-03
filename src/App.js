@@ -17,6 +17,7 @@ function App() {
 			})
 			.then((res) => {
 				console.log(res);
+				console.log(res[0].Key);
 			});
 	}
 
