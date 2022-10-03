@@ -4,15 +4,12 @@ function Weather(props) {
     return (
         <div>
             <>
-			<h1>Name of City</h1>
-			<h2>Degrees</h2>
-			<h2>Type of Day</h2>
+			<h2>Name of City - New York</h2>
+			<h3>Degrees - 75 </h3>
+			<h3>Type of Day - Sunny</h3>
 		</>
         </div>
     );
 }
 
 export default Weather;
-
-
-
