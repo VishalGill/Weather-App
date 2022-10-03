@@ -16,8 +16,22 @@ function App() {
 				return res.json();
 			})
 			.then((res) => {
+				// console.log(res);
+				let key = res[0].Key;
+				getWeather(key);
+			});
+	}
+	const myKey = process.env.REACT_APP_WEATHERAPI;
+	console.log(myKey);
+	function getWeather(key) {
+		const url = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=${myKey}&language=en-us&locationkey=${key}`;
+		fetch(url)
+			.then((res) => {
+				return res.json();
+			})
+			.then((res) => {
 				console.log(res);
-				console.log(res[0].Key);
+				// console.log(res[0].Key);
 			});
 	}
 
