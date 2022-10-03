@@ -16,7 +16,7 @@ function App() {
 				return res.json();
 			})
 			.then((res) => {
-				// console.log(res);
+				console.log(res[0].Key);
 				let key = res[0].Key;
 				getWeather(key);
 			});
@@ -24,13 +24,14 @@ function App() {
 	const myKey = process.env.REACT_APP_WEATHERAPI;
 	console.log(myKey);
 	function getWeather(key) {
-		const url = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=${myKey}&language=en-us&locationkey=${key}`;
-		fetch(url)
+		// daily forcast key `https://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=${myKey}&language=en-us&locationkey=${key}`;
+		const url = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${myKey}&locationkey=${key}`;
+		https: fetch(url)
 			.then((res) => {
 				return res.json();
 			})
 			.then((res) => {
-				console.log(res);
+				console.log(res[0].Temperature.Maxi);
 				// console.log(res[0].Key);
 			});
 	}
