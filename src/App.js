@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 function App() {
 	const [citySearch, setCitySearch] = useState('');
+	const [temp, setTemp] = useState('')
+	const [weatherType, setWeatherTemp] = UseState('')
 	function fetchWeather() {
 		console.log(citySearch);
 		const url = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=KCeDcnDMsYZ7FolPQ2HzCsQI9GdvxmP5&q=${citySearch}`;
@@ -22,7 +24,7 @@ function App() {
 			});
 	}
 	const myKey = process.env.REACT_APP_WEATHERAPI;
-	console.log(myKey);
+	// console.log(myKey);
 	function getWeather(key) {
 		// daily forcast key `https://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=${myKey}&language=en-us&locationkey=${key}`;
 		const url = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${myKey}&locationkey=${key}`;
@@ -31,8 +33,10 @@ function App() {
 				return res.json();
 			})
 			.then((res) => {
-				console.log(res[0].Temperature.Maxi);
-				// console.log(res[0].Key);
+				setTemp(res[0].Temperature.Imperial.Value);
+				console.log(res);
+				// console.log(res[0].Temperature.Imperial.Value);
+				console.log(res[0].WeatherText);
 			});
 	}
 
@@ -44,6 +48,10 @@ function App() {
 		setCitySearch(event.target.value);
 		// console.log(event.target.value)
 	}
+	
+	
+
+
 
 	return (
 		<div className='App'>
@@ -55,7 +63,7 @@ function App() {
 			/>
 
 			<ClipArt />
-			<Weather />
+			<Weather temp={temp} />
 			<Forecast />
 		</div>
 	);
