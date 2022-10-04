@@ -3,12 +3,14 @@ import Weather from './Components/Weather';
 import Header from './Components/Header';
 import Forecast from './Components/Forecast';
 import ClipArt from './Components/ClipArt';
+import TypeOfDay from './Components/TypeOfDay';
 import { useState } from 'react';
 
 function App() {
 	const [citySearch, setCitySearch] = useState('');
 	const [temp, setTemp] = useState('')
-	const [weatherType, setWeatherTemp] = UseState('')
+	const [weatherType, setWeatherType] = useState('')
+
 	function fetchWeather() {
 		console.log(citySearch);
 		const url = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=KCeDcnDMsYZ7FolPQ2HzCsQI9GdvxmP5&q=${citySearch}`;
@@ -36,7 +38,7 @@ function App() {
 				setTemp(res[0].Temperature.Imperial.Value);
 				console.log(res);
 				// console.log(res[0].Temperature.Imperial.Value);
-				console.log(res[0].WeatherText);
+				setWeatherType(res[0].WeatherText);
 			});
 	}
 
@@ -64,6 +66,7 @@ function App() {
 
 			<ClipArt />
 			<Weather temp={temp} />
+			<TypeOfDay weatherType={weatherType}/>
 			<Forecast />
 		</div>
 	);
