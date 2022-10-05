@@ -69,9 +69,13 @@ function App() {
 			.then((res) => {
 				// citySearch(res)
 				console.log(res);
-				setForecast(res.DailyForecasts[0].Temperature.Maximum.Value);
+				setForecast(res.DailyForecasts[(0, 1, 2)].Temperature.Maximum.Value);
 			});
 	}
+
+	//2 helper functions
+	//1 help function 1 component
+	//helper funct
 
 	function handleSubmit(event) {
 		event.preventDefault();
