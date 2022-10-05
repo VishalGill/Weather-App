@@ -5,12 +5,13 @@ function Weather({ temp }) {
 		<div>
 			<>
 				<h2></h2>
-				<h3>
-					{temp}
-					{'\u00b0'}
-				</h3>
+				<h1>
+					{temp ? temp + '\u00b0' : ''}
+				</h1>
 			</>
 		</div>
+		//conditional if temp is undefined
+		//render nothing else render sign
 	);
 }
 

@@ -69,7 +69,7 @@ function App() {
 			.then((res) => {
 				// citySearch(res)
 				console.log(res);
-				setForecast(res.DailyForecasts[(0, 1, 2)].Temperature.Maximum.Value);
+				setForecast(res.DailyForecasts);
 			});
 	}
 
@@ -96,9 +96,9 @@ function App() {
 			/>
 
 			<ClipArt />
-			<CityName city={city} />
-			<Weather temp={temp} />
-			<TypeOfDay weatherType={weatherType} />
+			<CityName className='cityName' city={city} />
+			<Weather className='weather' temp={temp} />
+			<TypeOfDay className='typeOfDay' weatherType={weatherType} />
 			<Forecast forecast={forecast} getForecast={getForecast} />
 		</div>
 	);
