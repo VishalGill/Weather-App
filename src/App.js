@@ -5,13 +5,15 @@ import Forecast from './Components/Forecast';
 import ClipArt from './Components/ClipArt';
 import TypeOfDay from './Components/TypeOfDay';
 import CityName from './Components/CityName';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
 	const [citySearch, setCitySearch] = useState('');
 	const [temp, setTemp] = useState('');
 	const [weatherType, setWeatherType] = useState('');
 	const [city, setCity] = useState('');
+	const [locationKey, setLocationKey] = useState('');
+	const [forecast, setForecast] = useState([]);
 
 	function fetchWeather() {
 		// console.log(citySearch);
@@ -22,24 +24,32 @@ function App() {
 				return res.json();
 			})
 			.then((res) => {
-				console.log(res[0]);
+				// console.log(res[0]);
 				setCity(res[0].EnglishName);
-				let key = res[0].Key;
-				getWeather(key);
+				setLocationKey(res[0].Key);
+				// let key = res[0].Key;
+				// getWeather(key);
+				console.log(locationKey);
+				getWeather();
 			});
 	}
 	const myKey = process.env.REACT_APP_WEATHERAPI;
 	// console.log(myKey);
-	function getWeather(key) {
-		// daily forcast key `https://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=${myKey}&language=en-us&locationkey=${key}`;
-		const url = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${myKey}&locationkey=${key}`;
+	useEffect(() => {
+		fetchWeather();
+		getWeather();
+	}, [locationKey]);
+
+	function getWeather() {
+		const urll = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${locationKey}`;
+		const url = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${myKey}&locationkey=${locationKey}`;
 		fetch(url)
 			.then((res) => {
 				return res.json();
 			})
 			.then((res) => {
 				// citySearch(res)
-				console.log(res);
+				// console.log(res);
 				// setCity(res[0].EnglishName);
 				// console.log(res[0].PrimaryPostalCode);
 				setTemp(res[0].Temperature.Imperial.Value);
@@ -49,20 +59,19 @@ function App() {
 			});
 	}
 
-	function getForecast (key) {
-
-		const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${key}`
-			fetch(url)
+	// const myKeyy = process.env.REACT_APP_WEATHERAPI
+	function getForecast() {
+		const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${locationKey}`;
+		fetch(url)
 			.then((res) => {
 				return res.json();
 			})
 			.then((res) => {
 				// citySearch(res)
 				console.log(res);
-	
-
-	});
-}
+				setForecast(res.DailyForecasts[0].Temperature.Maximum.Value);
+			});
+	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -86,7 +95,7 @@ function App() {
 			<CityName city={city} />
 			<Weather temp={temp} />
 			<TypeOfDay weatherType={weatherType} />
-			<Forecast />
+			<Forecast forecast={forecast} getForecast={getForecast} />
 		</div>
 	);
 }

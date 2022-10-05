@@ -1,16 +1,17 @@
 import React from 'react';
 
-function Forecast(props) {
+function Forecast({ getForecast, forecast}) {
+	// console.log(getForecast);
+	console.log(forecast);
 	return (
 		<div>
-		<button>7 Day Forecast</button>
+			<button onClick={getForecast}>7 Day Forecast</button>
+			{/* use.map */}
 			<li>Monday</li>
 			<li>Tuesday</li>
 			<li>Wednesday</li>
 			<li>Thursday</li>
 			<li>Friday</li>
-			<li>Saturday</li>
-			<li>Sunday</li>
 		</div>
 	);
 }
