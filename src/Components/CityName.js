@@ -1,11 +1,11 @@
 import React from 'react';
 
-function ClipArt(props) {
+function CityName({city}) {
     return (
         <div>
-            <p></p>
+            <h2>{city}</h2>
         </div>
     );
 }
 
-export default ClipArt;
+export default CityName;

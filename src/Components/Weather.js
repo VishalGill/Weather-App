@@ -1,17 +1,14 @@
 import React from 'react';
 
-function Weather({temp}) {
-
-	// const [temp, setTemp] = useState('')
-	// setTemp(res[0].Temperature.Imperial.Value);
-
-
+function Weather({ temp }) {
 	return (
 		<div>
 			<>
-				<h2>Name of City - New York</h2>
-				<h3>{temp}</h3>
-				
+				<h2></h2>
+				<h3>
+					{temp}
+					{'\u00b0'}
+				</h3>
 			</>
 		</div>
 	);
