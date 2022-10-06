@@ -21,7 +21,7 @@
 }
 body {
   margin: 0;
-  background-image: url(/Users/ashh/sei/projects/react-weather-app/src/images/beautiful-aerial-shot-forest-enveloped-creepy-mist-fog_181624-2659.webp);
+  background-image: black;
   background-size: cover;
   background-repeat: no-repeat;
   width: 200px;
