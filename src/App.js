@@ -41,7 +41,7 @@ function App() {
 	}, [locationKey]);
 
 	function getWeather() {
-		const urll = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${locationKey}`;
+		const urll = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${locationKey}`;
 		const url = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${myKey}&locationkey=${locationKey}`;
 		fetch(url)
 			.then((res) => {
@@ -61,7 +61,7 @@ function App() {
 
 	// const myKeyy = process.env.REACT_APP_WEATHERAPI
 	function getForecast() {
-		const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${locationKey}`;
+		const url = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey?apikey=${myKey}&LocationKey=${locationKey}`;
 		fetch(url)
 			.then((res) => {
 				return res.json();
