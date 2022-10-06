@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Description of Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I created a Weather App that gets you current weather conditions so you are able to see the weather in your location or anywhere around the world. You are able to fetch the information by city name or zip code. I've also implemented a 5 day forecast so you know what type of weather is coming up. Enjoy!
 
-## Available Scripts
+# Screenshot of my APP
 
-In the project directory, you can run:
+![1st Phase](https://github.com/VishalGill/Weather-App/blob/main/src/images/1.png)
+![2nd Phase](https://github.com/VishalGill/Weather-App/blob/main/src/images/2.png)
+![3rd Phase](https://github.com/VishalGill/Weather-App/blob/main/src/images/3.png)
 
-### `npm start`
+# List of Technologies used:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- HTML
+- CSS
+- Javascript
+- REACT
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Installation instructions
 
-### `npm test`
+Click on link and use Search button to find the weather info.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# User Stories
 
-### `npm run build`
+- AAU I want to be able to Look up weather by city so I can see the weather before I go outside
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- AAU I want to know the temperature in degrees so I can dress appropriately
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- AAU I want to know the type of weather there is (forecast, sunny, rain, snow) so I can dress appropriately and see if I need rain boots, umbrella etc.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Wireframes
 
-### `npm run eject`
+![](https://user-images.githubusercontent.com/111780518/193085081-cadde072-ec0b-4a91-9a3c-b88dd5a8bf29.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Unsolved problems/Major hurdles I had to over come:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Unsolved Problems:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- I wasn't able to implement clipArt for the type of weather - will revisit.
+- I wasn't able to give user options between Fahrenheit and Celsius.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Major Hurdles:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- I wasn't able to find an API that allowed to fetch weather by city directly so I had to fetch the location key of the city and then using that key had to fetch the weather info for the city originally searched.
+- Time Management AGAIN - Even when I was ahead I feel like there is never enough time to get your project to where you want it to be. I will try to do a better job of this next project.
+- Ran into alot of bugs when trying to implement Clipart.
