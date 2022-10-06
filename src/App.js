@@ -90,6 +90,7 @@ function App() {
 		<div className='App'>
 			<h1 className='title'>Weather App</h1>
 			<Header
+				className='headerStyle'
 				citySearch={citySearch}
 				handleSubmit={handleSubmit}
 				handleChange={handleChange}
@@ -97,9 +98,18 @@ function App() {
 
 			<ClipArt />
 			<CityName className='cityName' city={city} />
-			<Weather className='weather' temp={temp} />
 			<TypeOfDay className='typeOfDay' weatherType={weatherType} />
-			<Forecast forecast={forecast} getForecast={getForecast} />
+			<Weather
+				className='weatherStyle'
+				temp={temp}
+				forecast={forecast}
+				getForecast={getForecast}
+			/>
+			{/* <Forecast
+				className='forecastStyle'
+				forecast={forecast}
+				getForecast={getForecast}
+			/> */}
 		</div>
 	);
 }

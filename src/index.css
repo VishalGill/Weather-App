@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Rajdhani', sans-serif;
+  color: lightgray;
 
 }
 
@@ -29,6 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: lightslategray;
+
   
 
 }
@@ -47,13 +49,41 @@ code {
   text-align: center;
   margin:0 auto;
   padding: 100px;
-  background: rgb(0, 0, 0, 0.3);
+  background-color: rgb(0, 0, 0, 0.3);
+  background-image: linear-gradient(rgb(0, 0, 0, .5),rgb(0,0,0,0.01))
 
 
  }
 
 
  .title {
-  padding-top: 20px;
+  padding: 20px;
+  
  }
+
+ Weather {
+  padding: 200px;
+ }
+
+ li {
+  list-style: none;
+  text-align: left;
+ }
+
+ .searchButton {
+  color:black;
+ }
+
+ .searchBar {
+   color: black;
+ }
+
+ .forecastButton {
+    color: black;
+    width: 200px;
+    padding: 5px, 50px, 5px, 50px ;
+  }
  
+ button {
+  margin: 20px;
+ }

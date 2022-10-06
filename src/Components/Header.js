@@ -4,13 +4,15 @@ function Header({ citySearch, handleSubmit, handleChange }) {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<input
+				<input className='searchBar'
 					onChange={handleChange}
 					value={citySearch}
 					placeholder='Enter City Name'
 				/>{' '}
+
+				
 				<button type='submit' className='searchButton'>
-					Search
+					 Search
 				</button>
 			</form>
 		</div>
