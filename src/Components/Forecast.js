@@ -5,12 +5,21 @@ function Forecast({ getForecast, forecast}) {
 	console.log(forecast);
 	return (
 		<div>
-			<button className='forecastButton' onClick={getForecast}>5 Day Forecast</button>
+			<button className='forecastButton' onClick={getForecast}>
+				5 Day Forecast
+			</button>
 			{forecast.map((result) => (
 				<li>
-					{'Daily High: ' + result.Temperature.Maximum.Value}
-					{' Daily Low: ' + result.Temperature.Minimum.Value}
-					{' ' + result.Day.IconPhrase }
+					{'Date: ' +
+						result.Date[5] +
+						result.Date[6] +
+						'/' +
+						result.Date[8] +
+						result.Date[9] +
+						'    - '}
+					{'High: ' + result.Temperature.Maximum.Value}
+					{' | Low: ' + result.Temperature.Minimum.Value}
+					{' - ' + result.Day.IconPhrase}
 				</li>
 			))}
 			{/* {forecast.map((result) => (

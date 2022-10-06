@@ -6,7 +6,7 @@ function Weather({ temp, forecast, getForecast }) {
 		<div>
 			<>
 				<h2></h2>
-				<h1>{temp ? temp + '\u00b0' : ''}</h1>
+				<h1 className='weatherClass'>{temp ? temp + '\u00b0' : ''}</h1>
 				{temp ? (
 					<Forecast
 						className='forecastStyle'

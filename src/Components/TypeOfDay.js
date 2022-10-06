@@ -9,7 +9,7 @@ function TypeOfDay({weatherType}) {
 	
 
     return (
-			<div>
+			<div className='typeOfDay'>
 				<h2>{weatherType}</h2>
 			</div>
 		);

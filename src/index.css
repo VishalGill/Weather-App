@@ -58,6 +58,8 @@ code {
 
  .title {
   padding: 20px;
+  padding-bottom: 30px;
+  font-size: 60px;
   
  }
 
@@ -72,18 +74,43 @@ code {
 
  .searchButton {
   color:black;
+  width: 100px;
  }
 
  .searchBar {
    color: black;
+  width: 180px;
+  font-style: bold;
+  
+  text-align: center;
+
  }
 
  .forecastButton {
     color: black;
     width: 200px;
     padding: 5px, 50px, 5px, 50px ;
+    font-style: bold;
   }
  
  button {
   margin: 20px;
+  
  }
+
+
+ .cityName {
+ padding: 5px;
+ font-size: 25px;
+ }
+
+.typeOfDay{
+    padding: 5px;
+    font-size: 20px;
+ }
+
+.weatherClass {
+padding: 5px;
+
+
+}
